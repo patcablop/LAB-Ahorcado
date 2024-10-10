@@ -65,3 +65,16 @@ def pedir_letra(letras_probadas):
     else:
         return letra.lower() 
     
+def comprobar_letra(palabra_secreta, letra:str):
+    '''
+    Comprobar letra:
+    - Comprobar si la letra está en la palabra secreta o no
+    - Mostrar el mensaje correspondiente informando al usuario
+    - Devolver True si estaba y False si no
+    ''' 
+    if letra.lower() in palabra_secreta:
+        return True
+    else:
+        return False
+
+    
