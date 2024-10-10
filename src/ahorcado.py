@@ -76,5 +76,17 @@ def comprobar_letra(palabra_secreta, letra:str):
         return True
     else:
         return False
+    
+def comprobar_palabra_completa(palabra_secreta, letras_probadas):
+    '''
+    Comprobar si se ha completado la palabra:
+    - Comprobar si todas las letras de la palabra secreta han sido propuestas por el usuario
+    - Devolver True si es así o False si falta alguna letra por adivinar
+    '''
+    letras_correctas = True
+    for letra in palabra_secreta:
+        if letra in letras_probadas:
+            letras_correctas = False 
+    return letras_correctas
 
     
