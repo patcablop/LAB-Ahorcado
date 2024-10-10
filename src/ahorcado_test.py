@@ -49,7 +49,7 @@ if __name__ == "__main__":
     #test_enmascarar_palabra('python', {'p', 'y', 't', 'h', 'o', 'n'})
     #test_enmascarar_palabra('python', {'a', 'b', 'c', 'd', 'e'})
     #test_enmascarar_palabra('python', {'a', 'e', 'i', 'o', 'u'})
-    #test_pedir_letra({'a', 'b', 'c'})
+    test_pedir_letra({'a', 'b', 'c'})
     #test_comprobar_letra('python', 'p')
     #test_comprobar_letra('python', 'a')
     #test_compobar_palabra_completa('python', {'p', 'y', 't', 'h', 'o', 'n'})

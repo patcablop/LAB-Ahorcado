@@ -1,4 +1,3 @@
-
 import random
 def cargar_palabras(ruta):
     '''
@@ -22,3 +21,47 @@ def elegir_palabra(palabras):
     '''
     palabra_aleatoria = random.choice(palabras)
     return palabra_aleatoria
+
+def enmascarar_palabra(palabra, letras_probadas):
+    '''
+    Enmascarar la palabra:
+    - Inicializar una lista vacía. 
+    - Recorrer cada letra de la palabra, añadiendola a la lista 
+      si forma parte de las letras_probadas, o añadiendo un '_' en caso contrario. 
+    - Devuelve una cadena concatenando los elementos de la lista (ver 'Ayuda')
+    Ayuda: 
+    - Utilice el método join de las cadenas. Observe el siguiente ejemplo:
+        ' '.join(['a','b','c']) # Devuelve "a b c"
+    '''
+    resultado = []
+    for letra in palabra:
+        if letra in letras_probadas:
+            resultado.append(letra)
+
+        else:
+            resultado.append('_')
+
+    resultado = " ".join(resultado) 
+
+    return resultado 
+
+def pedir_letra(letras_probadas):
+    '''
+    Pedir la siguiente letra:
+    - Pedirle al usuario que escriba la siguiente letra por teclado
+    - Comprobar si la letra indicada ya se había propuesto antes y pedir otra si es así
+    - Considerar las letras en minúsculas aunque el usuario las escriba en mayúsculas
+    - Devolver la letra
+    Ayuda:
+    - La función 'input' permite leer una cadena de texto desde la entrada estándar
+    - El método 'lower' aplicado a una cadena devuelve una copia de la cadena en minúsculas
+    '''
+    letra = input('Introduce una letra: ')
+    
+    if letra.lower in letras_probadas:
+        print('Esa ya la has elegido')
+        pedir_letra(letras_probadas)
+
+    else:
+        return letra.lower() 
+    
