@@ -59,9 +59,9 @@ def pedir_letra(letras_probadas):
     - El método 'lower' aplicado a una cadena devuelve una copia de la cadena en minúsculas
     '''   
     letra = input('Introduce una letra: ')
-    if letra in letras_probadas: 
+    while letra in letras_probadas: 
         print('Esa ya la has elegido')
-        pedir_letra(letras_probadas)
+        letra = input('Introduce una letras: ')
 
     else:
         return letra.lower() 
@@ -146,7 +146,7 @@ def jugar(max_intentos, palabras):
             print(f"¡Felicidades! Has adivinado la palabra: {palabra_secreta}")
             break
         
-        palabra_enmascarada = enmascarar_palabra(palabra_secreta, letras_probadas)
+        #palabra_enmascarada = enmascarar_palabra(palabra_secreta, letras_probadas)
         #print(f"Palabra actual: {palabra_enmascarada}")
 
     print("Fin del juego.")
